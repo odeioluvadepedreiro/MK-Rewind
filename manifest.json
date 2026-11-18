@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "MK Rewind + AdBlock Video (beta)",
+  "version": "4.3.0",
+  "description": "Retrocesso integrado e bloqueio experimental de anuncios, com suporte opcional ao VAFT para anuncios de video.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitch.tv/*",
+        "https://twitch.tv/*"
+      ],
+      "js": [
+        "rewind.js"
+      ],
+      "css": [
+        "rewind.css"
+      ],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.twitch.tv/*",
+        "https://twitch.tv/*",
+        "https://player.twitch.tv/*"
+      ],
+      "js": [
+        "adblock_cosmetic.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "MK Rewind + AdBlock",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "scripting"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "twitch_ad_filters",
+        "enabled": true,
+        "path": "rules/ads.json"
+      }
+    ]
+  },
+  "host_permissions": [
+    "https://www.twitch.tv/*",
+    "https://twitch.tv/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

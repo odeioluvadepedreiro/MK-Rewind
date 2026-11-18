@@ -1,0 +1,40 @@
+/* MK Rewind v4.1 - estilos isolados por prefixo */
+#mkr4-root,#mkr4-root *{box-sizing:border-box}
+#mkr4-root{position:absolute;bottom:45px;left:0;right:0;z-index:2147483600;color:#f7f7f9;font:600 12px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;padding:0 14px;text-shadow:0 1px 3px #0008;pointer-events:none;display:flex;flex-direction:column;gap:6px}
+#mkr4-root .mkr4-toolbar{display:flex;gap:6px;align-items:center;align-self:flex-start;background:#15121de8;border:1px solid #ffffff38;border-radius:7px;padding:5px 7px;box-shadow:0 4px 16px #0008;pointer-events:auto;opacity:0;transform:translateY(3px);transition:opacity .15s,transform .15s}
+#mkr4-root:hover .mkr4-toolbar,#mkr4-root:focus-within .mkr4-toolbar{opacity:1;transform:none}
+#mkr4-root .mkr4-button{appearance:none;color:white;border:1px solid #ffffff35;border-radius:6px;padding:5px 9px;background:#25222eea;font:inherit;line-height:1.3;cursor:pointer;white-space:nowrap;text-shadow:none}
+#mkr4-root .mkr4-button:hover{background:#563477;border-color:#c1a2e6}
+#mkr4-root .mkr4-button:focus-visible,#mkr4-root .mkr4-range:focus-visible{outline:2px solid #fff;outline-offset:2px}
+#mkr4-root .mkr4-info{font-size:11px;font-weight:500;color:#e3d7e8;max-width:min(50vw,280px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mkr4-root .mkr4-bar{display:flex;align-items:center;gap:9px;pointer-events:auto;min-height:22px}
+#mkr4-root .mkr4-current{min-width:50px;text-align:left;font-size:11px;font-variant-numeric:tabular-nums}
+#mkr4-root .mkr4-range{--fill:100%;flex:1;min-width:0;height:16px;appearance:none;-webkit-appearance:none;background:transparent;cursor:pointer;border:0;margin:0;padding:0}
+#mkr4-root .mkr4-range::-webkit-slider-runnable-track{height:4px;background:linear-gradient(to right,#ff355c var(--fill),#696570 var(--fill));border-radius:9px;box-shadow:0 0 3px #000a}
+#mkr4-root .mkr4-range::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:#ff355c;border:2px solid #ffcad4;box-shadow:0 0 4px #0008}
+#mkr4-root .mkr4-range::-moz-range-track{height:4px;background:#696570;border-radius:9px}
+#mkr4-root .mkr4-range::-moz-range-progress{height:4px;background:#ff355c;border-radius:9px}
+#mkr4-root .mkr4-range::-moz-range-thumb{width:12px;height:12px;background:#ff355c;border:2px solid #ffcad4;border-radius:50%}
+#mkr4-root .mkr4-range:disabled{opacity:.48;cursor:not-allowed}
+#mkr4-root .mkr4-live{background:#be1f42e8;border-color:#ed7890;font-weight:800}
+#mkr4-root .mkr4-live[data-live=true]{background:#1d1925eb;border-color:#766980}
+#mkr4-root .mkr4-status{background:#16131eea;border:1px solid #8e749d;box-shadow:0 3px 12px #0008;padding:9px 11px;border-radius:7px;max-width:360px;position:absolute;bottom:57px;right:15px;pointer-events:auto}
+#mkr4-root .mkr4-tooltip{position:absolute;bottom:31px;transform:translateX(-50%);padding:5px 7px;background:#1b1821f2;border:1px solid #ffffff40;border-radius:5px;white-space:nowrap}
+#mkr4-root [hidden]{display:none!important}
+.mkr4-layer{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:500!important;background:#000!important;overflow:hidden!important}
+.mkr4-player,.mkr4-player iframe{width:100%!important;height:100%!important;min-height:0!important;border:0!important;display:block!important}
+@media(max-width:650px){#mkr4-root{padding:0 7px;bottom:40px}#mkr4-root .mkr4-button{padding:4px 5px}#mkr4-root .mkr4-info{max-width:100px}}
+
+/* Replay usa a timeline original do player incorporado Twitch.
+   A timeline customizada aparece apenas enquanto estamos AO VIVO. */
+#mkr4-root[data-mkr-mode="replay"] {
+  left:auto;right:16px;bottom:84px;width:max-content;max-width:calc(100% - 32px);padding:0;align-items:flex-end;
+}
+#mkr4-root[data-mkr-mode="replay"] .mkr4-current,
+#mkr4-root[data-mkr-mode="replay"] .mkr4-range,
+#mkr4-root[data-mkr-mode="replay"] .mkr4-tooltip {display:none!important}
+#mkr4-root[data-mkr-mode="replay"] .mkr4-bar {min-height:0;justify-content:flex-end;gap:0}
+#mkr4-root[data-mkr-mode="replay"] .mkr4-toolbar {align-self:flex-end}
+#mkr4-root[data-mkr-mode="replay"] .mkr4-live {box-shadow:0 3px 15px #000b;pointer-events:auto}
+#mkr4-root[data-mkr-mode="replay"] .mkr4-status {right:0;bottom:45px}
+@media(max-width:650px){#mkr4-root[data-mkr-mode="replay"]{right:8px;bottom:68px}}

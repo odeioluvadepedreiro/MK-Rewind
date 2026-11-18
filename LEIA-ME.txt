@@ -1,0 +1,27 @@
+MK REWIND + ADBLOCK DE VIDEO — v4.3 BETA
+
+O ANUNCIO DO PRINT E UM AD DENTRO DO VIDEO. O v4.2 SO BLOQUEAVA BANNERS/REQUISICOES EXTERNAS.
+Esta versao inclui um modo basico que tenta usar outra modalidade de acesso ao stream.
+Para bloqueio mais completo de anuncios SSAI, ative VAFT (projeto open-source licenciado MIT):
+
+1. EXTRAIA este ZIP em uma pasta local de sua escolha.
+2. ABRA a pasta e verifique o conteudo de preparar-vaft.ps1.
+3. EXECUTE ATIVAR-VAFT.cmd. Ele baixa o JS do commit fixo e CONFERE o hash antes de substituir adblock_video.js.
+   Nao instala nenhum aplicativo nem le senhas; precisa de Internet uma unica vez.
+4. Chrome: chrome://extensions -> REMOVA as versoes antigas MK Rewind.
+5. Ative modo do desenvolvedor, Carregar sem compactacao, escolha esta pasta.
+6. ABRA a Twitch, pressione Ctrl+R e abra o popup da extensao. Deve aparecer "Modo VAFT: bloqueio de video".
+7. Para desligar AdBlock, use o interruptor e recarregue a Twitch.
+
+Origem do VAFT: https://github.com/ryanbr/TwitchAdSolutions
+Arquivo verificado: https://raw.githubusercontent.com/ryanbr/TwitchAdSolutions/e4dfb26755cb440f9ec6a2430a9b131fa1de062a/vaft/vaft.user.js
+Git blob SHA-1 esperado: c80fb54fb3bedc72d0b2d0cf8ad3e90607fa6744
+Licenca: MIT; creditos em LICENSE-VAFT.txt.
+
+LIMITES IMPORTANTES
+- Nao existe garantia de bloqueio de todos os anuncios de video; a Twitch altera seus mecanismos constantemente.
+- O VAFT injeta codigo no player HLS, e pode provocar pausas, buffer e queda momentanea de qualidade.
+- A funcao de rewind depende de VOD acessivel e pode entrar em conflito com mudancas do player; ainda nao validada com VAFT numa live real.
+- Use somente um bloqueador de anuncios especifico para Twitch por vez.
+- Todo codigo incluido e local. Nao ha atualizacao automatica nem execucao de codigo remoto pelo Chrome.
+- A v4.3 foi validada com checagem de sintaxe/manifest, mas NAO testada em live real.
